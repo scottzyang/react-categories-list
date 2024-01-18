@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.category-button {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-Size: 1.5em;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10%;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2em;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  list-style: none;
+  background-color: azure;
+  margin: 1em;
+}
+
+p.item-name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p.item-price {
+  font-size: 20px;
+}
+
+body {
+  background-color: rgb(40, 40, 40);
+}

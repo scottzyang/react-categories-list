@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import data from './data'
+import CategoryButton from './categoryButton';
+import Product from './product';
+import CategoryList from './categoryList';
 
 function App() {
+  const [category, setCategory] = useState('All')
+
+  const handleCategoryClick = (newCategory) => {
+    setCategory(newCategory);
+  }
+
+  const categoryList = data.filter((item) => {
+    return item.category === category || category === 'All'
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CategoryList handleCategoryClick={handleCategoryClick} />
+      <CategoryButton index={null} category={"All"} handleCategoryClick={handleCategoryClick}></CategoryButton>
+        <ul className='item-list'>
+          { categoryList.map((item) => (
+            <Product item={item} />
+          ))}
+        </ul>
     </div>
   );
 }
