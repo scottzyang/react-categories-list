@@ -18,8 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <CategoryList handleCategoryClick={handleCategoryClick} />
-      <CategoryButton index={null} category={"All"} handleCategoryClick={handleCategoryClick}></CategoryButton>
+      <CategoryList currentCategory={category} handleCategoryClick={handleCategoryClick} />
         <ul className='item-list'>
           { categoryList.map((item) => (
             <Product item={item} />
